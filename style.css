@@ -799,6 +799,7 @@ body {
 .textLove {
     position: absolute;
     top: 3%;
+    text-align: center;
     display: flex;
     align-items: center;
     text-transform: capitalize;
@@ -1041,4 +1042,36 @@ body {
 .music-btn i {
     font-size: 24px;
     color: white;
+}
+
+@media screen and (max-width: 400px) {
+    .textLove p {
+        font-size: 2rem;
+        padding: 0px 8px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+      .textLove p {
+        font-size: 1.8rem;
+        padding: 0px 8px;
+    }
+
+    .gift3 {   
+        top: 62%;
+    }
+
+        .gift2 {
+        top: 63%;
+    }
+
+        .gift {
+        left: 32px;
+        top: 77%;
+    }
+
+    .gift1 {
+        right: 42px;
+        top: 78%;
+    }
 }

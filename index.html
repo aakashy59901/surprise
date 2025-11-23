@@ -91,11 +91,23 @@
         </div>
     </div>
 
+    <audio id="bgMusic" src="./my.mp3" autoplay loop muted></audio>
+
 </body>
 <script>
     var mail = document.querySelector(".mail")
     mail.addEventListener("click", ()=>{
         window.location.href = "mail.html"
     })
+
+    window.addEventListener("load", () => {
+        const audio = document.getElementById("bgMusic");
+        setTimeout(() => {
+            audio.muted = false;
+            audio.volume = 0.4;  // volume 40%
+            audio.play().catch(err => console.log("Autoplay blocked:", err));
+        }, 800);
+    });
+
 </script>
 </html>
