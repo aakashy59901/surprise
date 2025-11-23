@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue 4 | Tap in Order</title>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+      scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+        body {
+            background: #fff1f6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff3d7b;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .hint {
+            font-size: 18px;
+            color: #ff6b9b;
+            margin-bottom: 30px;
+        }
+
+        .hearts {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+            font-size: 50px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Clue 4: Tap in the Correct Sequence 💗</h2>
+
+    <div class="hint">Hint: Love starts with RED… ends with BLUE 💙</div>
+
+    <div class="hearts">
+        <span class="h" data-id="1">❤️</span>
+        <span class="h" data-id="4">💙</span>
+        <span class="h" data-id="2">💛</span>
+        <span class="h" data-id="3">💚</span>
+    </div>
+
+    <div class="error" id="msg"></div>
+
+<script>
+const correct = ["1", "3", "2", "4"];
+let user = [];
+
+document.querySelectorAll(".h").forEach(h => {
+    h.addEventListener("click", () => {
+        user.push(h.getAttribute("data-id"));
+
+        if (user.length === 4) {
+            if (JSON.stringify(user) === JSON.stringify(correct)) {
+                window.location.href = "clue5.html";
+            } else {
+                document.getElementById("msg").innerText = "Galat sequence baby 😄 — try again!";
+                user = [];
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -13,6 +13,9 @@
     <title>To You!</title>
 </head>
 <body>
+    <div class="hintBox" id="hintBox">
+        ✨Start typing in the box to reveal your message! ✨
+    </div>
     <div class="warpper preloading">
         <div class="box">
             <div class="mail">
@@ -29,19 +32,21 @@
                     </div>
                     <p>
                         Kabhi socha nahi tha ki screen ke peeche
-                        koi itna special mil jayega…😌💫
+                        koi itna special mil jayegi…😌💫
                         Par tumse baat karke lagta hai
                         distance sirf physical hota hai,
-                        connection toh dil-se hota hai.❤️
+                        connection toh dil-se hota hai.🌸❤️
                         Tumara "hii mitreee" message dekh ke
                         mera mood instantly perfect ho jata hai😄✨
                         Pata nahi kaise…
                         par tumhari chats dil ko cute si smile de jaati hain.🙂💕
                         Aur jab tum mujhe ‘babe’ bolti ho na…
-                        us moment pe main literally melt ho jata hoon😳❤️‍🔥
+                        us moment pe main literally melt ho jata hoon🤌😳❤️‍🔥
                     </p>
                     <div class="gifs_left">
-                        <img id="heart__letter" src="https://media.giphy.com/media/YKUvclrGYmDKXwtphf/giphy.gif" alt="" class="animationOp">
+                        <a href="clue1.html">
+                            <img id="heart__letter" src="https://media.giphy.com/media/YKUvclrGYmDKXwtphf/giphy.gif" alt="" class="animationOp">
+                        </a>
                     </div>
                     <div class="gifs_right">
                         <img id="heart__letter" src="https://media.giphy.com/media/YKUvclrGYmDKXwtphf/giphy.gif" alt="" class="animationOp">
@@ -60,6 +65,7 @@
             </div>
         </div>
     </div>
+
     
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
@@ -99,7 +105,17 @@
                 musicBtn.style.background = '#ff69b4';
             }
         });
+
+        const msgInput = document.getElementById('msgInput');
+        const hint = document.getElementById('hintBox');
+
+        msgInput.addEventListener('input', () => {
+            hint.classList.add("hintHide");
+        });
+
     </script>
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
 </body>
 </html>

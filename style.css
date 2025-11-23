@@ -5,6 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     user-select: none;
+      scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 body {
     height: 100vh;
@@ -604,7 +606,7 @@ body {
     height: 35px;
     background: #ffffff;
     top: -30px;
-    left: 50px;
+    left: 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -646,7 +648,7 @@ body {
 }
 .gift1::before{
     position: absolute;
-    content: "Nhé";
+    content: "mitree🥰";
     font-size: 20px;
     color: red;
     font-family: 'Dancing Script', cursive;
@@ -654,7 +656,7 @@ body {
     height: 35px;
     background: #ffffff;
     top: -30px;
-    right: 50px;
+    right: 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -696,7 +698,7 @@ body {
 }
 .gift2::before{
     position: absolute;
-    content: "Thư";
+    content: "babe❤️";
     font-size: 20px;
     color: red;
     font-family: 'Dancing Script', cursive;
@@ -704,7 +706,7 @@ body {
     height: 35px;
     background: #ffffff;
     top: -30px;
-    left: 50px;
+    left: -16px;
     border-radius: 5px;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -744,7 +746,7 @@ body {
     height: 35px;
     background: #ffffff;
     top: -30px;
-    right: 50px;
+    right: -10px;
     border-radius: 5px;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
     display: flex;

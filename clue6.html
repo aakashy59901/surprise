@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clue 1 – Find My Heart ❤️</title>
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    margin: 0;
+    background: #ffdde6;
+    overflow: hidden;
+    font-family: "Pacifico", cursive;
+}
+
+/* HEARTS */
+.heart {
+    position: absolute;
+    font-size: 60px;
+    cursor: pointer;
+    animation: float 6s infinite ease-in-out;
+    user-select: none;
+    z-index: 5;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) scale(1); opacity: 0; }
+    30% { opacity: 1; }
+    50% { transform: translateY(40vh) scale(1.2); }
+    100% { transform: translateY(-20vh) scale(1); opacity: 0; }
+}
+
+/* MESSAGE */
+#message {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    color: #d40055;
+    opacity: 0;
+    transition: 0.5s;
+    font-family: "Poppins", sans-serif;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+/* TRUE HEART GLOW */
+.glow {
+    text-shadow: 0 0 15px #ff5d8f, 0 0 30px #ff2b72;
+}
+
+/* 📱 RESPONSIVE FIXES ONLY */
+@media (max-width: 600px) {
+    .heart {
+        font-size: 40px;    /* smaller hearts */
+    }
+
+    #message {
+        font-size: 20px;    /* readable on small screens */
+        bottom: 25px;
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 350px) {
+    .heart {
+        font-size: 34px;    /* for very small screens */
+    }
+
+    #message {
+        font-size: 18px;
+        bottom: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="message"></div>
+
+<script>
+// RANDOM HEART POSITIONS
+function randomPosition() {
+    return Math.floor(Math.random() * 80) + 10;
+}
+
+// TRUE HEART INDEX
+const trueHeart = Math.floor(Math.random() * 5);
+
+for (let i = 0; i < 5; i++) {
+    let h = document.createElement("div");
+    h.classList.add("heart");
+    h.innerHTML = "❤️";
+
+    // Random position
+    h.style.left = randomPosition() + "vw";
+    h.style.animationDelay = (i * 0.6) + "s";
+
+    if (i === trueHeart) {
+        h.classList.add("glow");
+        h.addEventListener("click", () => {
+            document.getElementById("message").style.opacity = 1;
+            document.getElementById("message").innerHTML = "You found my true heart, babe ❤️";
+            
+            setTimeout(() => {
+                window.location.href = "clue7.html";
+            }, 2000);
+        });
+    } 
+    else {
+        h.addEventListener("click", () => {
+            showMessage("Nahi jii... this one is not mine 😘 Try again");
+        });
+    }
+
+    document.body.appendChild(h);
+}
+
+// Show wrong message
+function showMessage(text) {
+    const msg = document.getElementById("message");
+    msg.innerHTML = text;
+    msg.style.opacity = 1;
+
+    setTimeout(() => {
+        msg.style.opacity = 0;
+    }, 1500);
+}
+</script>
+
+</body>
+</html>
