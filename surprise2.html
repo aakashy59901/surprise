@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Do you like surprises?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+      scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+    body {
+      margin: 0;
+      padding: clamp(20px, 5vw, 40px);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background: linear-gradient(135deg, rgba(91,12,53,0.7) 0%, rgba(5,4,7,0.95) 40%, rgba(19,6,11,0.98) 100%);
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      max-width: 900px;
+      width: 100%;
+      padding: clamp(15px, 3vw, 30px);
+    }
+
+    .heart {
+      width: clamp(70px, 12vw, 90px);
+      height: clamp(70px, 12vw, 90px);
+      margin: 0 auto clamp(20px, 4vw, 30px);
+      border-radius: 50%;
+      background: #5c0aff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(32px, 6vw, 40px);
+      box-shadow: 0 0 20px rgba(92,10,255,0.5);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(92,10,255,0.5);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(92,10,255,0.7);
+      }
+    }
+
+    h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(32px, 8vw, 70px);
+      margin: 0 0 clamp(8px, 2vw, 10px);
+      line-height: 1.2;
+    }
+
+    .sub {
+      font-size: clamp(16px, 3vw, 20px);
+      opacity: 0.85;
+      margin-bottom: clamp(25px, 5vw, 40px);
+      padding: 0 10px;
+    }
+
+    .btns {
+      display: flex;
+      gap: clamp(12px, 3vw, 20px);
+      justify-content: center;
+      margin-top: clamp(15px, 3vw, 20px);
+      flex-wrap: wrap;
+      padding: 0 10px;
+    }
+
+    .btn {
+      padding: clamp(12px, 2.5vw, 14px) clamp(25px, 5vw, 30px);
+      border-radius: 30px;
+      font-size: clamp(16px, 3vw, 20px);
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 140px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .yes {
+      background: #06c66b;
+      color: white;
+    }
+
+    .no {
+      background: #ff4b4b;
+      color: white;
+    }
+
+    .yes:hover {
+      background: #05b361;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(6,198,107,0.4);
+    }
+
+    .no:hover {
+      background: #ff3535;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255,75,75,0.4);
+    }
+
+    .yes:active,
+    .no:active {
+      transform: scale(0.95);
+    }
+
+    /* Mobile specific styles */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: clamp(28px, 9vw, 42px);
+      }
+
+      .heart {
+        margin-bottom: 20px;
+      }
+
+      .sub {
+        margin-bottom: 30px;
+      }
+
+      .btns {
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 18px;
+        padding: 14px 0;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      .sub {
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 12px 0;
+      }
+    }
+
+    /* Landscape mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        padding: 10px;
+      }
+
+      .heart {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 5px;
+      }
+
+      .sub {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .btns {
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        min-width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="heart">💜</div>
+    <h1>Do you like surprises?</h1>
+    <div class="sub">I promise it's worth it...</div>
+
+    <div class="btns">
+      <button class="btn yes" onclick="goYes()">Yes 💘</button>
+      <button class="btn no" onclick="goNo()">No 🤧</button>
+    </div>
+  </div>
+
+  <script>
+    function goYes() {
+      // Replace with your actual page URL
+      // alert("Great! 💘 This would navigate to your next page!");
+      window.location.href = "doYouLikeMe.html";
+    }
+
+    function goNo() {
+      // Replace with your actual page URL
+      // alert("Aww... 🤧 This would navigate to your 'please say yes' page!");
+      window.location.href = "pleaseSayYes.html";
+    }
+  </script>
+</body>
+</html>
